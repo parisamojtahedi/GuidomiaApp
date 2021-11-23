@@ -12,7 +12,8 @@ struct CarItem: Decodable {
     let model: String
     let marketPrice: Double
     let rating: Int
-    
+    let prosList: [String]
+    let consList: [String]
 }
 
 protocol CarListInteractor {
@@ -47,7 +48,9 @@ class CarListInteractorImp: CarListInteractor {
         let item = CarCellConfigurator(item: CarTableViewCellModel(image: UIImage(named: "\(item.model)") ?? UIImage(),
                                                                    name: item.model,
                                                                    price: "\(item.marketPrice)",
-                                                                   numericStar: item.rating))
+                                                                   numericStar: item.rating,
+                                                                   prosList: item.prosList,
+                                                                   consList: item.consList))
         carList.append(item)
     }
     

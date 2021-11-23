@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B140D4EF274D52A7004301E3 /* car_list.json in Resources */ = {isa = PBXBuildFile; fileRef = B140D4EE274D52A7004301E3 /* car_list.json */; };
 		B1A6ABCD274C475C00828C7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A6ABCC274C475C00828C7A /* AppDelegate.swift */; };
 		B1A6ABCF274C475C00828C7A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A6ABCE274C475C00828C7A /* SceneDelegate.swift */; };
 		B1A6ABD1274C475C00828C7A /* CarListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A6ABD0274C475C00828C7A /* CarListViewController.swift */; };
@@ -22,7 +23,6 @@
 		B1A6ABFD274C75B300828C7A /* CarListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A6ABFC274C75B300828C7A /* CarListInteractor.swift */; };
 		B1A6ABFF274C795600828C7A /* CarListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A6ABFE274C795600828C7A /* CarListPresenter.swift */; };
 		B1A6AC01274C7B1700828C7A /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A6AC00274C7B1700828C7A /* ServiceProvider.swift */; };
-		B1A6AC05274C873F00828C7A /* car_list.json in Resources */ = {isa = PBXBuildFile; fileRef = B1A6AC04274C873F00828C7A /* car_list.json */; };
 		B1A6AC07274C87E400828C7A /* CarListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A6AC06274C87E400828C7A /* CarListRouter.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B140D4EE274D52A7004301E3 /* car_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = car_list.json; sourceTree = "<group>"; };
 		B1A6ABC9274C475C00828C7A /* GuidomiaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuidomiaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1A6ABCC274C475C00828C7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1A6ABCE274C475C00828C7A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,7 +56,6 @@
 		B1A6ABFC274C75B300828C7A /* CarListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListInteractor.swift; sourceTree = "<group>"; };
 		B1A6ABFE274C795600828C7A /* CarListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListPresenter.swift; sourceTree = "<group>"; };
 		B1A6AC00274C7B1700828C7A /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
-		B1A6AC04274C873F00828C7A /* car_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = car_list.json; path = "../../../../../Downloads/Guidomia 2021_2/car_list.json"; sourceTree = "<group>"; };
 		B1A6AC06274C87E400828C7A /* CarListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -170,7 +170,7 @@
 		B1A6AC03274C872500828C7A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				B1A6AC04274C873F00828C7A /* car_list.json */,
+				B140D4EE274D52A7004301E3 /* car_list.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -260,7 +260,7 @@
 				B1A6ABE8274C4CA300828C7A /* ImageTableViewCell.xib in Resources */,
 				B1A6ABD9274C475D00828C7A /* Assets.xcassets in Resources */,
 				B1A6ABD4274C475C00828C7A /* Main.storyboard in Resources */,
-				B1A6AC05274C873F00828C7A /* car_list.json in Resources */,
+				B140D4EF274D52A7004301E3 /* car_list.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
