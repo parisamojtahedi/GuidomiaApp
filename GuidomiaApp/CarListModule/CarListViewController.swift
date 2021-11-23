@@ -18,6 +18,7 @@ protocol CarListView: AnyObject {
 class CarListViewController: UIViewController {
     var presenter: CarListPresenter!
     var router: CarListRouter?
+    var selectedRowIndex = IndexPath(row: 1, section: 0)
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -42,9 +43,7 @@ class CarListViewController: UIViewController {
         super.viewDidLoad()
         
         CarListWireframe.buildModule(serviceProvider: ServiceProviderImp(), view: self)
-        
         presenter.onViewDidLoad()
-        
     }
     
     
@@ -56,7 +55,6 @@ class CarListViewController: UIViewController {
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        
     }
 }
 
@@ -68,12 +66,25 @@ extension CarListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let item = presenter?.getItem(for: indexPath) else { return UITableViewCell() }
         let cell = tableView.dequeueReusableCell(withIdentifier: type(of: item).reuseId)!
-        item.configure(cell: cell)
+        if let cell = cell as? CarTableViewCell {
+            if indexPath == selectedRowIndex {
+                cell.shouldExpand = true
+            } else {
+                cell.shouldExpand = false
+            }
+        }
         
+        item.configure(cell: cell)
+        cell.layoutIfNeeded()
         return cell
     }
 }
 extension CarListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedRowIndex = indexPath
+        tableView.reloadData()
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
             return 300
