@@ -14,9 +14,8 @@ protocol CarListPresenter: AnyObject {
     var router: CarListRouter? { get set }
     
     func onViewDidLoad()
-    func getItem(for indexPath: IndexPath) -> CellConfigurator
-    func getNumberOfItems() -> Int
-    func updateUI()
+    func updateUI(using sections: [TableViewSectionTypes])
+    func updateCarSection(using sections: [TableViewSectionTypes])
 }
 class CarListPresenterImp: CarListPresenter {
     weak var controller: CarListView?
@@ -27,15 +26,11 @@ class CarListPresenterImp: CarListPresenter {
         interactor.fetchItems()
     }
     
-    func getItem(for indexPath: IndexPath) -> CellConfigurator {
-        interactor.getItem(for: indexPath)
+    func updateUI(using sections: [TableViewSectionTypes]) {
+        controller?.updateUI(using: sections)
     }
     
-    func updateUI() {
-        controller?.updateUI()
-    }
-    
-    func getNumberOfItems() -> Int {
-        return interactor.getNumberOfItems()
+    func updateCarSection(using sections: [TableViewSectionTypes]) {
+        controller?.updateCarSection(using: sections)
     }
 }

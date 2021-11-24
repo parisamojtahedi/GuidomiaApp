@@ -7,18 +7,22 @@
 
 import UIKit
 
-typealias ImageCellConfigurator = TableCellConfigurator<ImageTableViewCell, ImageTableViewCellModel>
-typealias CarCellConfigurator = TableCellConfigurator<CarTableViewCell, CarTableViewCellModel>
-
 protocol CarListView: AnyObject {
     var presenter: CarListPresenter! { get set }
     var router: CarListRouter? { get set }
-    func updateUI()
+    func updateUI(using sections: [TableViewSectionTypes])
+    func updateCarSection(using sections: [TableViewSectionTypes])
+}
+enum TableViewSectionTypes {    
+    case image
+    case filter(model: FilterTableViewCellModel)
+    case car(model: [CarTableViewCellModel])
 }
 class CarListViewController: UIViewController {
     var presenter: CarListPresenter!
     var router: CarListRouter?
-    var selectedRowIndex = IndexPath(row: 1, section: 0)
+    var selectedRowIndex = IndexPath(row: 0, section: 2)
+    var sections: [TableViewSectionTypes] = []
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -27,6 +31,7 @@ class CarListViewController: UIViewController {
         identifiers.forEach({ tableView.register(UINib(nibName: $0, bundle: nil),
                                                  forCellReuseIdentifier: $0) })
         tableView.register(CarTableViewCell.self, forCellReuseIdentifier: "CarTableViewCell")
+        tableView.register(FilterTableViewCell.self, forCellReuseIdentifier: "FilterTableViewCell")
         tableView.separatorStyle = .none
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.dataSource = self
@@ -59,24 +64,42 @@ class CarListViewController: UIViewController {
 }
 
 extension CarListViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return sections.count
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter?.getNumberOfItems() ?? 0
+        switch sections[section] {
+        case .image, .filter:
+            return 1
+        case .car(let model):
+            return model.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let item = presenter?.getItem(for: indexPath) else { return UITableViewCell() }
-        let cell = tableView.dequeueReusableCell(withIdentifier: type(of: item).reuseId)!
-        if let cell = cell as? CarTableViewCell {
+        switch sections[indexPath.section] {
+        case .image:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "ImageTableViewCell", for: indexPath) as? ImageTableViewCell else { return UITableViewCell() }
+            cell.configure(model: ImageTableViewCellModel(image: UIImage(named: "Tacoma") ?? UIImage(),
+                                                          topLabelText: "Guidomia"))
+            cell.selectionStyle = .none
+            return cell
+        case .filter(let model):
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "FilterTableViewCell", for: indexPath) as? FilterTableViewCell else { return UITableViewCell() }
+            cell.configure(model: model)
+            cell.selectionStyle = .none
+            return cell
+        case .car(let model):
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "CarTableViewCell", for: indexPath) as? CarTableViewCell else { return UITableViewCell() }
             if indexPath == selectedRowIndex {
                 cell.shouldExpand = true
             } else {
                 cell.shouldExpand = false
             }
+            cell.configure(model: model[indexPath.row])
+            cell.selectionStyle = .none
+            return cell
         }
-        
-        item.configure(cell: cell)
-        cell.layoutIfNeeded()
-        return cell
     }
 }
 extension CarListViewController: UITableViewDelegate {
@@ -86,7 +109,7 @@ extension CarListViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 0 {
+        if indexPath.section == 0 {
             return 300
         } else {
             return UITableView.automaticDimension
@@ -94,8 +117,15 @@ extension CarListViewController: UITableViewDelegate {
     }
 }
 extension CarListViewController: CarListView {
-    func updateUI() {
+    func updateUI(using sections: [TableViewSectionTypes]) {
+        self.sections = sections
         tableView.reloadData()
+    }
+    
+    func updateCarSection(using sections: [TableViewSectionTypes]) {
+        self.sections = sections
+        self.tableView.reloadSections(IndexSet(integersIn: 2...2), with: .automatic)
+
     }
 }
 protocol ConfigurableCell {
