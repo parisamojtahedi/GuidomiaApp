@@ -7,15 +7,27 @@
 
 import Foundation
 import UIKit
+import RealmSwift
+import Realm
 
 struct CarItem: Decodable {
-    let model: String
-    let marketPrice: Double
-    let rating: Int
-    let prosList: [String]
-    let consList: [String]
-    let make: String
+    var model: String = ""
+    var marketPrice: Double = 0.0
+    var rating: Int = 0
+    var prosList: [String] = []
+    var consList: [String] = []
+    var make: String = ""
 }
+
+class RealmCarItem: RealmSwiftObject {
+    @objc dynamic var model: String = ""
+    @objc dynamic var marketPrice: Double = 0.0
+    @objc dynamic var rating: Int = 0
+    var prosList = List<String>()
+    var consList = List<String>()
+    @objc dynamic var make: String = ""
+}
+
 
 protocol CarListInteractor {
     var presenter: CarListPresenter? { get set }
@@ -23,14 +35,19 @@ protocol CarListInteractor {
 }
 class CarListInteractorImp: CarListInteractor {
     private let serviceProvider: ServiceProvider
+    private let dataStoreHandler: DataStoreCompatible
+    
     weak var presenter: CarListPresenter?
     private var carItems: [CarItem] = []
     private var filteredItems: [TableViewSectionTypes] = []
     private var sections: [TableViewSectionTypes] = []
+    private let realm = try! Realm()
     
-    
-    init(serviceProvider: ServiceProvider) {
+    init(serviceProvider: ServiceProvider,
+         dataStoreHandler: DataStoreCompatible) {
         self.serviceProvider = serviceProvider
+        self.dataStoreHandler = dataStoreHandler
+        
         let reloadClosure: ((FilterQuery) -> Void) = { [weak self] query in
             self?.filterItems(using: query.searchText, filter: query.filter)
         }
@@ -40,11 +57,55 @@ class CarListInteractorImp: CarListInteractor {
     }
     
     func fetchItems() {
+        if !dataStoreHandler.retrieveItemsFromRealm().isEmpty {
+            let objects = realm.objects(RealmCarItem.self)
+            var carList: [CarItem] = []
+
+            for obj in objects {
+                var item = CarItem()
+                item.model = obj.model
+                item.make = obj.make
+                item.marketPrice = obj.marketPrice
+                item.rating = obj.rating
+                item.prosList = Array(obj.prosList)
+                item.consList = Array(obj.consList)
+                carList.append(item)
+            }
+            self.carItems = carList
+            sections.append(.car(model: carList.map({ self.makeCarItem(using: $0)})))
+            self.updateUI()
+            return
+            
+        }
         serviceProvider.fetchItems { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let carList):
                 self.carItems = carList
+                do {
+                    let realm = try Realm()
+                    realm.beginWrite()
+                    var realmList: [RealmCarItem] = []
+                    
+                    for item in carList {
+                        let proList = List<String>()
+                        let consList = List<String>()
+
+                        let realmItem = RealmCarItem()
+                        realmItem.model = item.model
+                        realmItem.make = item.make
+                        realmItem.marketPrice = item.marketPrice
+                        realmItem.rating = item.rating
+                        proList.append(objectsIn: item.prosList)
+                        consList.append(objectsIn: item.consList)
+                        realmItem.prosList = proList
+                        realmItem.consList = consList
+                        realmList.append(realmItem)
+                    }
+                    dataStoreHandler.saveInRealm(using: realmList)
+                } catch {
+                    print(error.localizedDescription)
+                }
                 sections.append(.car(model: carList.map({ self.makeCarItem(using: $0)})))
                 self.updateUI()
             case .failure(let error):
@@ -58,8 +119,8 @@ class CarListInteractorImp: CarListInteractor {
                                      name: item.model,
                                      price: "\(item.marketPrice)",
                                      numericStar: item.rating,
-                                     prosList: item.prosList,
-                                     consList: item.consList)
+                                     prosList: Array(item.prosList),
+                                     consList: Array(item.consList))
     }
     
     func updateUI() {

@@ -7,14 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05D0EE04689D9159644AA77C /* Pods_GuidomiaApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC72DFB9ED07B7763527DEB5 /* Pods_GuidomiaApp.framework */; };
+		6A54D0A4B9394C58F0FA075A /* Pods_GuidomiaAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD44FA2C4C01C31591246212 /* Pods_GuidomiaAppTests.framework */; };
 		B140D4EF274D52A7004301E3 /* car_list.json in Resources */ = {isa = PBXBuildFile; fileRef = B140D4EE274D52A7004301E3 /* car_list.json */; };
 		B140D4F2274DC10A004301E3 /* FilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B140D4F1274DC10A004301E3 /* FilterTableViewCell.swift */; };
 		B140D4F4274DC133004301E3 /* ProConsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B140D4F3274DC133004301E3 /* ProConsView.swift */; };
+		B140D4F7274EE902004301E3 /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B140D4F6274EE902004301E3 /* CoreDataHandler.swift */; };
 		B1A6ABCD274C475C00828C7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A6ABCC274C475C00828C7A /* AppDelegate.swift */; };
 		B1A6ABCF274C475C00828C7A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A6ABCE274C475C00828C7A /* SceneDelegate.swift */; };
 		B1A6ABD1274C475C00828C7A /* CarListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A6ABD0274C475C00828C7A /* CarListViewController.swift */; };
 		B1A6ABD4274C475C00828C7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1A6ABD2274C475C00828C7A /* Main.storyboard */; };
-		B1A6ABD7274C475C00828C7A /* GuidomiaApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B1A6ABD5274C475C00828C7A /* GuidomiaApp.xcdatamodeld */; };
 		B1A6ABD9274C475D00828C7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1A6ABD8274C475D00828C7A /* Assets.xcassets */; };
 		B1A6ABDC274C475D00828C7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1A6ABDA274C475D00828C7A /* LaunchScreen.storyboard */; };
 		B1A6ABE7274C4CA300828C7A /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A6ABE5274C4CA300828C7A /* ImageTableViewCell.swift */; };
@@ -39,15 +41,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0962A890490B16B5A5900932 /* Pods-GuidomiaAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuidomiaAppTests.debug.xcconfig"; path = "Target Support Files/Pods-GuidomiaAppTests/Pods-GuidomiaAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1E01CFDBEBB09B42B6AE529D /* Pods-GuidomiaApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuidomiaApp.release.xcconfig"; path = "Target Support Files/Pods-GuidomiaApp/Pods-GuidomiaApp.release.xcconfig"; sourceTree = "<group>"; };
+		A0C3C433A6C3B7C43EA04CA5 /* Pods-GuidomiaApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuidomiaApp.debug.xcconfig"; path = "Target Support Files/Pods-GuidomiaApp/Pods-GuidomiaApp.debug.xcconfig"; sourceTree = "<group>"; };
 		B140D4EE274D52A7004301E3 /* car_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = car_list.json; sourceTree = "<group>"; };
 		B140D4F1274DC10A004301E3 /* FilterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTableViewCell.swift; sourceTree = "<group>"; };
 		B140D4F3274DC133004301E3 /* ProConsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProConsView.swift; sourceTree = "<group>"; };
+		B140D4F6274EE902004301E3 /* CoreDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
 		B1A6ABC9274C475C00828C7A /* GuidomiaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuidomiaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1A6ABCC274C475C00828C7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1A6ABCE274C475C00828C7A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B1A6ABD0274C475C00828C7A /* CarListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListViewController.swift; sourceTree = "<group>"; };
 		B1A6ABD3274C475C00828C7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B1A6ABD6274C475C00828C7A /* GuidomiaApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GuidomiaApp.xcdatamodel; sourceTree = "<group>"; };
 		B1A6ABD8274C475D00828C7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B1A6ABDB274C475D00828C7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B1A6ABDD274C475D00828C7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,6 +66,9 @@
 		B1A6ABFE274C795600828C7A /* CarListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListPresenter.swift; sourceTree = "<group>"; };
 		B1A6AC00274C7B1700828C7A /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
 		B1A6AC06274C87E400828C7A /* CarListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListRouter.swift; sourceTree = "<group>"; };
+		BC72DFB9ED07B7763527DEB5 /* Pods_GuidomiaApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GuidomiaApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D99E75B8825CD832134778EC /* Pods-GuidomiaAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuidomiaAppTests.release.xcconfig"; path = "Target Support Files/Pods-GuidomiaAppTests/Pods-GuidomiaAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		DD44FA2C4C01C31591246212 /* Pods_GuidomiaAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GuidomiaAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05D0EE04689D9159644AA77C /* Pods_GuidomiaApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,12 +84,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A54D0A4B9394C58F0FA075A /* Pods_GuidomiaAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A11DE474813BA2E759DC7A5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BC72DFB9ED07B7763527DEB5 /* Pods_GuidomiaApp.framework */,
+				DD44FA2C4C01C31591246212 /* Pods_GuidomiaAppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5B008C4AAED8B6E61A3C5D3F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A0C3C433A6C3B7C43EA04CA5 /* Pods-GuidomiaApp.debug.xcconfig */,
+				1E01CFDBEBB09B42B6AE529D /* Pods-GuidomiaApp.release.xcconfig */,
+				0962A890490B16B5A5900932 /* Pods-GuidomiaAppTests.debug.xcconfig */,
+				D99E75B8825CD832134778EC /* Pods-GuidomiaAppTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		B140D4F0274DC0D2004301E3 /* FilterCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -89,12 +119,22 @@
 			path = FilterCell;
 			sourceTree = "<group>";
 		};
+		B140D4F5274EE8E0004301E3 /* PersistentStore */ = {
+			isa = PBXGroup;
+			children = (
+				B140D4F6274EE902004301E3 /* CoreDataHandler.swift */,
+			);
+			path = PersistentStore;
+			sourceTree = "<group>";
+		};
 		B1A6ABC0274C475C00828C7A = {
 			isa = PBXGroup;
 			children = (
 				B1A6ABCB274C475C00828C7A /* GuidomiaApp */,
 				B1A6ABEE274C4CE700828C7A /* GuidomiaAppTests */,
 				B1A6ABCA274C475C00828C7A /* Products */,
+				5B008C4AAED8B6E61A3C5D3F /* Pods */,
+				1A11DE474813BA2E759DC7A5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,6 +150,7 @@
 		B1A6ABCB274C475C00828C7A /* GuidomiaApp */ = {
 			isa = PBXGroup;
 			children = (
+				B140D4F5274EE8E0004301E3 /* PersistentStore */,
 				B1A6AC03274C872500828C7A /* Resources */,
 				B1A6AC02274C870B00828C7A /* CarListModule */,
 				B1A6ABF6274C685E00828C7A /* Extensions */,
@@ -120,7 +161,6 @@
 				B1A6ABD8274C475D00828C7A /* Assets.xcassets */,
 				B1A6ABDA274C475D00828C7A /* LaunchScreen.storyboard */,
 				B1A6ABDD274C475D00828C7A /* Info.plist */,
-				B1A6ABD5274C475C00828C7A /* GuidomiaApp.xcdatamodeld */,
 				B1A6AC00274C7B1700828C7A /* ServiceProvider.swift */,
 			);
 			path = GuidomiaApp;
@@ -196,9 +236,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B1A6ABE0274C475D00828C7A /* Build configuration list for PBXNativeTarget "GuidomiaApp" */;
 			buildPhases = (
+				F971A3613C5FF20412DDCC94 /* [CP] Check Pods Manifest.lock */,
 				B1A6ABC5274C475C00828C7A /* Sources */,
 				B1A6ABC6274C475C00828C7A /* Frameworks */,
 				B1A6ABC7274C475C00828C7A /* Resources */,
+				6B604C951CDA53EB419EE503 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -213,6 +255,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B1A6ABF3274C4CE700828C7A /* Build configuration list for PBXNativeTarget "GuidomiaAppTests" */;
 			buildPhases = (
+				1276344D21AFD83A0471CF6E /* [CP] Check Pods Manifest.lock */,
 				B1A6ABE9274C4CE700828C7A /* Sources */,
 				B1A6ABEA274C4CE700828C7A /* Frameworks */,
 				B1A6ABEB274C4CE700828C7A /* Resources */,
@@ -287,18 +330,82 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1276344D21AFD83A0471CF6E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GuidomiaAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6B604C951CDA53EB419EE503 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GuidomiaApp/Pods-GuidomiaApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GuidomiaApp/Pods-GuidomiaApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GuidomiaApp/Pods-GuidomiaApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F971A3613C5FF20412DDCC94 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GuidomiaApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B1A6ABC5274C475C00828C7A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1A6ABD7274C475C00828C7A /* GuidomiaApp.xcdatamodeld in Sources */,
 				B1A6ABFB274C700C00828C7A /* CarTableViewCell.swift in Sources */,
 				B1A6ABD1274C475C00828C7A /* CarListViewController.swift in Sources */,
 				B1A6ABE7274C4CA300828C7A /* ImageTableViewCell.swift in Sources */,
 				B1A6ABF8274C687000828C7A /* UIColor+Extension.swift in Sources */,
 				B1A6ABCD274C475C00828C7A /* AppDelegate.swift in Sources */,
 				B1A6AC07274C87E400828C7A /* CarListRouter.swift in Sources */,
+				B140D4F7274EE902004301E3 /* CoreDataHandler.swift in Sources */,
 				B1A6AC01274C7B1700828C7A /* ServiceProvider.swift in Sources */,
 				B1A6ABCF274C475C00828C7A /* SceneDelegate.swift in Sources */,
 				B140D4F4274DC133004301E3 /* ProConsView.swift in Sources */,
@@ -464,6 +571,7 @@
 		};
 		B1A6ABE1274C475D00828C7A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0C3C433A6C3B7C43EA04CA5 /* Pods-GuidomiaApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -490,6 +598,7 @@
 		};
 		B1A6ABE2274C475D00828C7A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E01CFDBEBB09B42B6AE529D /* Pods-GuidomiaApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -516,6 +625,7 @@
 		};
 		B1A6ABF4274C4CE700828C7A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0962A890490B16B5A5900932 /* Pods-GuidomiaAppTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -538,6 +648,7 @@
 		};
 		B1A6ABF5274C4CE700828C7A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D99E75B8825CD832134778EC /* Pods-GuidomiaAppTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -589,19 +700,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		B1A6ABD5274C475C00828C7A /* GuidomiaApp.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				B1A6ABD6274C475C00828C7A /* GuidomiaApp.xcdatamodel */,
-			);
-			currentVersion = B1A6ABD6274C475C00828C7A /* GuidomiaApp.xcdatamodel */;
-			path = GuidomiaApp.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = B1A6ABC1274C475C00828C7A /* Project object */;
 }

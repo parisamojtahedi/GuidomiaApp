@@ -15,7 +15,8 @@ class CarListWireframe: CarListRouter {
     static func buildModule(serviceProvider: ServiceProvider,
                             view: CarListView) {
         let presenter: CarListPresenter = CarListPresenterImp()
-        var interactor:  CarListInteractor = CarListInteractorImp(serviceProvider: serviceProvider)
+        var interactor:  CarListInteractor = CarListInteractorImp(serviceProvider: serviceProvider,
+                                                                  dataStoreHandler: DataStoreHandler())
         let router = CarListWireframe()
         
         view.presenter = presenter

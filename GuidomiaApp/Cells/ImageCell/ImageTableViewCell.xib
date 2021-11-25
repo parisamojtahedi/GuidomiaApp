@@ -18,10 +18,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6tR-Ma-enJ">
-                        <rect key="frame" x="0.0" y="0.0" width="656" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="656" height="80"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UgR-Jv-LZP">
-                                <rect key="frame" x="16" y="0.0" width="42" height="44"/>
+                                <rect key="frame" x="16" y="0.0" width="42" height="80"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -29,15 +29,15 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="44" id="5JX-t1-di6"/>
                             <constraint firstItem="UgR-Jv-LZP" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="6tR-Ma-enJ" secondAttribute="trailing" id="6c4-38-HAE"/>
                             <constraint firstAttribute="bottom" secondItem="UgR-Jv-LZP" secondAttribute="bottom" id="91u-1d-1Dr"/>
+                            <constraint firstAttribute="height" constant="80" id="Gpl-fn-oUu"/>
                             <constraint firstItem="UgR-Jv-LZP" firstAttribute="top" secondItem="6tR-Ma-enJ" secondAttribute="top" id="dUw-de-bjD"/>
                             <constraint firstItem="UgR-Jv-LZP" firstAttribute="leading" secondItem="6tR-Ma-enJ" secondAttribute="leading" constant="16" id="xOP-EE-Xds"/>
                         </constraints>
                     </view>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRh-iB-9Nz">
-                        <rect key="frame" x="0.0" y="44" width="656" height="352"/>
+                        <rect key="frame" x="0.0" y="80" width="656" height="316"/>
                     </imageView>
                 </subviews>
                 <constraints>
